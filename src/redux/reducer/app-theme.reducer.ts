@@ -1,0 +1,27 @@
+import { createSlice } from "@reduxjs/toolkit";
+import { AppThemeEntity, AppThemeState } from "@src/models";
+
+
+const initialAppThemeState: AppThemeState = {
+    appTheme: AppThemeEntity.light
+}
+
+const slice = createSlice({
+    name: 'APP_THEME_STATE',
+    initialState: initialAppThemeState,
+    reducers: {
+        onChangeAppTheme: state => {
+            if(state.appTheme === AppThemeEntity.dark) {
+                state.appTheme = AppThemeEntity.light
+            } else {
+                state.appTheme = AppThemeEntity.dark
+            }
+        }
+    }
+})
+
+const appThemeReducer = slice.reducer;
+export default appThemeReducer;
+export const { onChangeAppTheme } = slice.actions
+
+
