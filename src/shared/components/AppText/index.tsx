@@ -1,15 +1,13 @@
 import { FC, ReactNode, useMemo } from "react";
 import { StyleProp, Text, TextProps, TextStyle } from "react-native"
-import { useTranslation } from "react-i18next";
 
 import { useAppTheme } from "@src/shared/hooks";
 import { APP_FONTS } from "@src/shared/themes";
 import { sizes } from "@src/shared/utils";
-import TranslationKeys from "@src/translations/i18n-type";
 
 interface DefaultTextProps extends TextProps {
     style?: StyleProp<TextStyle>
-    translationKey?: TranslationKeys
+    text?: string
     fontFamily?:
     | 'content_bold'
     | 'content_semibold'
@@ -92,16 +90,15 @@ const setFontFamily = (font: string) => {
 };
 const AppText: FC<DefaultTextProps> = ({
     children,
-    translationKey,
+    text,
     ...props
 }) => {
-    const { t } = useTranslation();
     const { Colors } = useAppTheme()
     let displayText;
-    if (translationKey && children) {
-        displayText = t(translationKey) + children;
+    if (text && children) {
+        displayText = text + children;
     } else {
-        displayText = translationKey ? t(translationKey) : children;
+        displayText = text ? text : children;
     }
     const marginStyles = useMemo(() => {
         return {

@@ -1,5 +1,5 @@
-import { AppThemeEntity, AppThemeState } from "@src/models/redux";
-import { getAppTheme } from "../themes";
+import { AppThemeEntity } from "@src/models/redux";
+import { getAppTheme, Spacing } from "../themes";
 import { useAppSelector } from "./useAppSelector";
 
 export const useAppTheme = () => {
@@ -24,6 +24,7 @@ const mergeAppTheme = (
     return {
         ...primaryTheme,
         Colors: mergedColors,
-        IsDark: isDark
+        IsDark: isDark,
+        Spacing: Spacing,
     }
 }

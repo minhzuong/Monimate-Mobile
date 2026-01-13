@@ -18,16 +18,16 @@ const PageContainer: FC<PageContainerProps> = ({
   style,
 }) => {
   const inset = useSafeAreaInsets();
-  const { Colors } = useAppTheme();
+  const { Colors, Spacing } = useAppTheme();
   return (
     <View
       style={[
         styles.container,
         {
           backgroundColor: Colors.defaultPageBackground,
-          paddingHorizontal: padding ? sizes._24sdp : sizes._0sdp,
+          paddingHorizontal: padding ? Spacing.lg : Spacing.none,
           paddingTop: inset.top,
-          paddingBottom: disablePaddingBottom ? sizes._0sdp : inset.bottom,
+          paddingBottom: disablePaddingBottom ? Spacing.none : inset.bottom,
         },
         style,
       ]}
