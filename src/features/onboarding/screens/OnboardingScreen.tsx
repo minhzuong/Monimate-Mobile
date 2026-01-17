@@ -30,7 +30,7 @@ const OnBoardingScreen = () => {
         bottom: paddingBottom
     } = useSafeAreaInsets()
     const listRef = useRef<FlatList>(null)
-    const [index, setIndex] = useState<number>(0)
+    const [currentPage, setCurrentPage] = useState<number>(0)
     const { Images } = useAppTheme()
     const { t } = useTranslation()
     const scrollX = useSharedValue(0);
@@ -59,9 +59,9 @@ const OnBoardingScreen = () => {
 
     const onNextPress = () => {
         
-        if (index < data.length - 1) {
+        if (currentPage < data.length - 1) {
             listRef.current?.scrollToIndex({
-                index: index + 1,
+                index: currentPage + 1,
                 animated: true,
             })
         } else {
@@ -94,7 +94,7 @@ const OnBoardingScreen = () => {
                     minHeight: sizes._55sdp,
                 }}
             >
-                {index < data.length -  1 && (
+                {currentPage < data.length -  1 && (
                  <TouchableOpacity
                     onPress={onSkipPress}
                  >
@@ -118,7 +118,7 @@ const OnBoardingScreen = () => {
                     const currentIndex = Math.round(
                         e.nativeEvent.contentOffset.x / width
                     )
-                    setIndex(currentIndex)
+                    setCurrentPage(currentIndex)
                 }}
                 keyExtractor={(_, index) => `${index}`}
             />
@@ -131,7 +131,7 @@ const OnBoardingScreen = () => {
 
 
             <AppButton
-                title={index == data.length - 1 ? t("button_get_started") : t("button_next")}
+                title={currentPage == data.length - 1 ? t("button_get_started") : t("button_next")}
                 titleStyle={{
                     textTransform: "uppercase"
                 }}
