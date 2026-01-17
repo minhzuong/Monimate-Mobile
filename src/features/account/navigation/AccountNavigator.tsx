@@ -1,9 +1,9 @@
 import { createStackNavigator } from "@react-navigation/stack"
-import { AccountParamsList, APP_SCREEN } from "@src/navigation/ScreenTypes"
+import { APP_SCREEN, AuthenticationParamsList } from "@src/navigation/ScreenTypes"
 import { AccountOverviewScreen } from "../screens"
 
 const AccountNavigator = () => {
-    const AccountStack = createStackNavigator<AccountParamsList>()
+    const AccountStack = createStackNavigator<AuthenticationParamsList>()
     const Stack = createStackNavigator()
     return (
         <AccountStack.Navigator screenOptions={{headerShown: false}}>

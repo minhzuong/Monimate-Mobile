@@ -1,10 +1,13 @@
+import { DarkImage, LightImage } from "@src/assets";
 import { DarkColors, LightColor } from "./color";
 
 export const getAppTheme = () => ({
     light: {
-        Colors: LightColor
+        Colors: LightColor,
+        Images: LightImage
     }, 
     dark: {
-        Colors: DarkColors
+        Colors: DarkColors,
+        Images: DarkImage
     }
 })

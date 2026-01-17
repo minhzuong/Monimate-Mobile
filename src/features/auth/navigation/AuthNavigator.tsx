@@ -1,13 +1,16 @@
 import { CardStyleInterpolators, createStackNavigator, StackNavigationOptions } from "@react-navigation/stack"
 
 import { APP_SCREEN, UnAuthenticationParamsList } from "@src/navigation/ScreenTypes"
-import { LoginScreen, OnBoardingScreen, RegisterScreen } from "../screens"
+import { OnboardingScreen } from "@src/features/onboarding/screens"
+import { useAppSelector } from "@src/shared/hooks"
+
+import { LoginScreen, RegisterScreen } from "../screens"
 
 const AuthStack = createStackNavigator<UnAuthenticationParamsList>()
 
 const AuthNavigator = () => {
 
-    const showOnboarding = true;
+    const showOnboarding = useAppSelector(x => x.appReducer.showOnboarding)
 
     const defaultScreenOptions: StackNavigationOptions = {
         animationTypeForReplace: 'pop',
@@ -21,7 +24,7 @@ const AuthNavigator = () => {
         component: React.ComponentType<Element>
     } = {
         name: APP_SCREEN.ONBOARDING,
-        component: OnBoardingScreen
+        component: OnboardingScreen
     }
     
 
@@ -41,7 +44,7 @@ const AuthNavigator = () => {
 
     return (
         <AuthStack.Navigator>
-            {showOnboarding ? (
+            {!!showOnboarding ? (
                 <>
                     {[onBoardingScreen, ...screens].map(screen => (
                         <AuthStack.Screen 

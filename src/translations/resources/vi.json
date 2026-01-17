@@ -1,6 +1,8 @@
 {
     "translation":{
       "empty_string":"",
+      "button_next": "Tiếp",
+      "button_get_started": "Bắt đầu ngay",
       "sign_in_title": "Đăng nhập!",
       "error.title": "An error occurred"
     }

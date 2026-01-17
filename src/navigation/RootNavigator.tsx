@@ -6,7 +6,7 @@ import { APP_NAVIGATOR, RootStackParamList } from "./ScreenTypes"
 
 const RootNavigator = () => {
     const RookStack = createStackNavigator<RootStackParamList>()
-    const isLoggedIn = true
+    const isLoggedIn = false
 
     return (
         <RookStack.Navigator screenOptions={{headerShown: false}}>

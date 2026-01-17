@@ -4,6 +4,7 @@ import { persistReducer, persistStore } from "redux-persist";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import appThemeReducer from "../reducer/app-theme.reducer";
+import appReducer from "../reducer/app.reducer";
 
 const middleware: any = [];
 if (__DEV__) {
@@ -12,11 +13,12 @@ if (__DEV__) {
 const persistConfig = {
     key: 'root',
     storage: AsyncStorage,
-    whitelist: [],
+    whitelist: ['appReducer'],
     blacklist: []
 }
 const rootReducer = combineReducers({
-    appThemeReducer: appThemeReducer
+    appThemeReducer: appThemeReducer,
+    appReducer: appReducer
 })
 
 const persistedReducer = persistReducer(persistConfig,rootReducer)

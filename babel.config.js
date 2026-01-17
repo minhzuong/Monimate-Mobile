@@ -22,7 +22,8 @@ module.exports = {
           "@features": "./src/features"
         }
       },
-      'react-native-reanimated/plugin',
     ],
+    // 'react-native-reanimated/plugin',
+    'react-native-worklets/plugin',
   ]
 };

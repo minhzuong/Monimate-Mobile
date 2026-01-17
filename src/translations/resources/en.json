@@ -1,6 +1,8 @@
 {
     "translation":{
       "empty_string":"",
+      "button_next": "Next",
+      "button_get_started": "Get Started",
       "sign_in_title": "Login!",
       "error.title": "An error occurred"
     }
