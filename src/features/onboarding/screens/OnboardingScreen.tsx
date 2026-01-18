@@ -1,20 +1,15 @@
 import { useMemo, useRef, useState } from "react"
-import { Dimensions, FlatList, Image, ImageSourcePropType, Text, TouchableOpacity, View } from "react-native"
+import { Dimensions, FlatList, TouchableOpacity, View } from "react-native"
 import { useSafeAreaInsets } from "react-native-safe-area-context"
 import { useTranslation } from "react-i18next"
 import Animated, {
-    Extrapolation,
-    interpolate,
-    interpolateColor,
-    useAnimatedProps,
     useAnimatedScrollHandler,
-    useAnimatedStyle,
     useSharedValue,
 } from 'react-native-reanimated';
 
 import { AppButton, AppText, Box } from "@src/shared/components"
 import { useAppDispatch, useAppTheme } from "@src/shared/hooks"
-import { _screen_width, Cache, sizes, SPACING_PAGE } from "@src/shared/utils"
+import { _screen_width, sizes, SPACING_PAGE } from "@src/shared/utils"
 
 import { navigate } from "@src/navigation/NavigationServices";
 import { APP_SCREEN } from "@src/navigation/ScreenTypes";
@@ -24,7 +19,7 @@ import PageItem, { DataType } from "../components/PageItem"
 import { PageDot } from "../components"
 
 const { width } = Dimensions.get("screen")
-const OnBoardingScreen = () => {
+const OnboardingScreen = () => {
     const {
         top: paddingTop,
         bottom: paddingBottom
@@ -81,7 +76,7 @@ const OnBoardingScreen = () => {
             useAppDispatch(onDisableOnboarding())
             navigate(APP_SCREEN.LOGIN)
         } catch (error) {
-           console.error("Lỗi lưu async storage");
+           console.error("error:",error);
         }
     }
 
@@ -102,7 +97,7 @@ const OnBoardingScreen = () => {
                         text="Skip"
                         fontFamily="content_semibold"
                     />
-                </TouchableOpacity>   
+                </TouchableOpacity> 
                 )}
 
             </Box>
@@ -146,5 +141,5 @@ const OnBoardingScreen = () => {
 }
 
 
-export default OnBoardingScreen
+export default OnboardingScreen
 

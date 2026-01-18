@@ -1,6 +1,5 @@
 import { Image, ImageSourcePropType, View } from "react-native"
 
-
 import { AppText, Box } from "@src/shared/components"
 import { _screen_width, sizes } from "@src/shared/utils"
 
