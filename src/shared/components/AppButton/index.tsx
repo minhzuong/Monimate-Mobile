@@ -43,7 +43,7 @@ const AppButton: FC<AppButtonProps> = ({
                 {showTitle && (<AppText
                     text={title}
                     color={Colors.defaultButtonTitle}
-                    fontFamily="content_semibold"
+                    fontFamily="content_bold"
                     style={[
                         {
                             marginHorizontal: sizes._16sdp,
@@ -60,8 +60,8 @@ const AppButton: FC<AppButtonProps> = ({
 
 const styles = StyleSheet.create({
     button: {
-        height: sizes._58sdp,
-        borderRadius: sizes._10sdp,
+        height: sizes._60sdp,
+        borderRadius: sizes._150sdp,
         justifyContent: "center",
         alignItems: "center"
     }

@@ -26,24 +26,24 @@ const OnboardingScreen = () => {
     } = useSafeAreaInsets()
     const listRef = useRef<FlatList>(null)
     const [currentPage, setCurrentPage] = useState<number>(0)
-    const { Images } = useAppTheme()
+    const { Colors,Images } = useAppTheme()
     const { t } = useTranslation()
     const scrollX = useSharedValue(0);
 
     const data = useMemo(() => [
         {
-            title: "Quản lý chi tiêu dễ dàng",
-            description: "Theo dõi mọi khoản chi hằng ngày chỉ trong vài thao tác.",
+            title: "Be easier to manage\nyour own money",
+            description: "Just using your phone, you can manage all your cashflow more easy and detail",
             image: Images.onboarding1
         },
         {
-            title: "Hiểu rõ tài chính của bạn",
-            description: "Xem báo cáo trực quan để đưa ra quyết định tốt hơn.",
+            title: "Be more flexible\nand secure",
+            description: "Use this platform in all your device, don't worry about anything, we protect you",
             image: Images.onboarding2
         },
         {
-            title: "Tiết kiệm thông minh",
-            description: "Đặt mục tiêu và tích lũy tiền cho những kế hoạch quan trọng.",
+            title: "Be more mindful spending.\nSo, let's get started!",
+            description: "Be mindful spending, and you will be closer to financial freedom",
             image: Images.onboarding3
         },
     ], [])
@@ -52,8 +52,19 @@ const OnboardingScreen = () => {
         return <PageItem data={item} />
     }
 
+    const onBackPress = () => {
+        if (currentPage == 0 ) {
+            return 
+        } else {
+             listRef.current?.scrollToIndex({
+                index: currentPage - 1,
+                animated: true,
+            })
+        }
+    }
+
     const onNextPress = () => {
-        
+
         if (currentPage < data.length - 1) {
             listRef.current?.scrollToIndex({
                 index: currentPage + 1,
@@ -71,18 +82,14 @@ const OnboardingScreen = () => {
         },
     });
 
-    const onSkipPress = async () => {
-        try {
-            useAppDispatch(onDisableOnboarding())
-            navigate(APP_SCREEN.LOGIN)
-        } catch (error) {
-           console.error("error:",error);
-        }
-    }
 
     return (
-        <View style={[{ paddingTop, paddingBottom, flex: 1 }]}>
-            <Box
+        <View style={[{
+            paddingTop,
+            paddingBottom,
+            flex: 1,
+        }]}>
+            {/* <Box
                 align="flex-end"
                 style={{
                     padding: SPACING_PAGE,
@@ -100,42 +107,78 @@ const OnboardingScreen = () => {
                 </TouchableOpacity> 
                 )}
 
-            </Box>
-            <Animated.FlatList
-                ref={listRef}
-                data={data}
-                horizontal
-                pagingEnabled
-                renderItem={_renderPageItem}
-                onScroll={scrollHandler}
-                showsHorizontalScrollIndicator={false}
-                onMomentumScrollEnd={e => {
-                    const currentIndex = Math.round(
-                        e.nativeEvent.contentOffset.x / width
-                    )
-                    setCurrentPage(currentIndex)
+            </Box> */}
+            <View>
+                <Animated.FlatList
+                    ref={listRef}
+                    data={data}
+                    horizontal
+                    pagingEnabled
+                    renderItem={_renderPageItem}
+                    onScroll={scrollHandler}
+                    showsHorizontalScrollIndicator={false}
+                    onMomentumScrollEnd={e => {
+                        const currentIndex = Math.round(
+                            e.nativeEvent.contentOffset.x / width
+                        )
+                        setCurrentPage(currentIndex)
+                    }}
+                    keyExtractor={(_, index) => `${index}`}
+                />
+            </View>
+            <Box
+                direction="horizontal"
+                justify="center"
+                style={{
+                    marginTop: sizes._40sdp
                 }}
-                keyExtractor={(_, index) => `${index}`}
-            />
-            <Box direction="horizontal" justify="center">
+            >
                 {data.map((e, index) => (
                     <PageDot key={index} scrollX={scrollX} index={index} />
                 ))}
 
             </Box>
 
+            <Box 
+                cover
+                style={{
+                    paddingHorizontal: SPACING_PAGE,
+                    paddingVertical: sizes._45sdp,
+                    justifyContent: "flex-end",
+                }}
+                
+            >
+                <Box 
+                    horizontal
+                >
+                    <Box
+                        cover
+                        align="center"
+                        justify="center"
+                    >
+                        <AppText
+                            text="Back"
+                            fontFamily="content_semibold"
+                            color={currentPage !== 0 ? Colors.defaultTextTitle : Colors.defaultTextSubTitle}
+                            onPress={onBackPress}
+                        />
+                    </Box>
+                        
+                
+                    <AppButton
+                        title={currentPage == data.length - 1 ? t("button_get_started") : t("button_next")}
+                        titleStyle={{
+                            textTransform: "uppercase"
+                        }}
+                        containerStyle={{
+                            flex: 1
+                        }}
+                        
+                        onPress={onNextPress}
+                    />
+                </Box>
 
-            <AppButton
-                title={currentPage == data.length - 1 ? t("button_get_started") : t("button_next")}
-                titleStyle={{
-                    textTransform: "uppercase"
-                }}
-                containerStyle={{
-                    paddingVertical: sizes._100sdp,
-                    paddingHorizontal: SPACING_PAGE
-                }}
-                onPress={onNextPress}
-            />
+            </Box>
         </View>
     )
 }

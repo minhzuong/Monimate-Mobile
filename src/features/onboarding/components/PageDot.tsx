@@ -48,7 +48,7 @@ const PageDotContainer: FC<Props> = ({ ...props }) => {
 };
 const styles = StyleSheet.create({
   pageDot: {
-    height: 6,
+    height: 8,
     borderRadius: 99,
     marginHorizontal: 4,
   },

@@ -15,9 +15,9 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 function App() {
 
-  // useEffect(() => {
-  //   AsyncStorage.clear();
-  // },[])
+  useEffect(() => {
+    AsyncStorage.clear()
+  },[])
   return (
     <SafeAreaProvider>
       <Provider store={store}>
