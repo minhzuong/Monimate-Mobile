@@ -89,25 +89,6 @@ const OnboardingScreen = () => {
             paddingBottom,
             flex: 1,
         }]}>
-            {/* <Box
-                align="flex-end"
-                style={{
-                    padding: SPACING_PAGE,
-                    minHeight: sizes._55sdp,
-                }}
-            >
-                {currentPage < data.length -  1 && (
-                 <TouchableOpacity
-                    onPress={onSkipPress}
-                 >
-                    <AppText
-                        text="Skip"
-                        fontFamily="content_semibold"
-                    />
-                </TouchableOpacity> 
-                )}
-
-            </Box> */}
             <View>
                 <Animated.FlatList
                     ref={listRef}

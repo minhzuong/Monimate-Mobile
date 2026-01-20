@@ -3,8 +3,10 @@ export const COLORS = {
     white: "#FFFFFF",
     black: "#000000",
     darkBlue: "#22356F",
+    borderGray: "#E5E7EB",
     blueGray: "#7B8BBE",
     grayBackground: '#DDD0C8', // Gray Beige - nền nhẹ
+    errorRed: '#ef5350',
 }
 
 export const DarkColors = {
@@ -18,6 +20,9 @@ export const DarkColors = {
     defaultButtonBackground: COLORS.primaryPurple,
     defaultButtonTitle: COLORS.white,
     disableButtonBackground: COLORS.grayBackground,
+    inputFocusBorder: COLORS.blueGray,
+    inputOutFocusBorder: COLORS.borderGray,
+    error: COLORS.errorRed
 }
 
 export const LightColor = {
@@ -31,4 +36,7 @@ export const LightColor = {
     defaultButtonBackground: COLORS.primaryPurple,
     defaultButtonTitle: COLORS.white,
     disableButtonBackground: COLORS.grayBackground,
+    inputFocusBorder: COLORS.blueGray,
+    inputOutFocusBorder: COLORS.borderGray,
+    error: COLORS.errorRed
 }

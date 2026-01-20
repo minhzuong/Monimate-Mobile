@@ -1,6 +1,13 @@
 {
     "translation":{
       "empty_string":"",
+      "login.title": "Login!",
+      "login.title.button": "Login",
+      "login.forgot_password": "Forgot Password",
+      "email": "Email",
+      "enter_your_email": "Enter your email",
+      "password": "Password",
+      "enter_your_password": "Enter your password",
       "button_next": "Next",
       "button_get_started": "Get Started",
       "sign_in_title": "Login!",

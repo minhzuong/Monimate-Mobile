@@ -3,7 +3,7 @@ import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { useAppTheme } from '@src/shared/hooks';
-import { sizes } from '@src/shared/utils';
+import { sizes, SPACING_PAGE } from '@src/shared/utils';
 
 interface PageContainerProps {
   children: React.ReactNode;
@@ -25,7 +25,7 @@ const PageContainer: FC<PageContainerProps> = ({
         styles.container,
         {
           backgroundColor: Colors.defaultPageBackground,
-          paddingHorizontal: padding ? Spacing.lg : Spacing.none,
+          paddingHorizontal: padding ? SPACING_PAGE : Spacing.none,
           paddingTop: inset.top,
           paddingBottom: disablePaddingBottom ? Spacing.none : inset.bottom,
         },

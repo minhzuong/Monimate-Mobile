@@ -1,6 +1,13 @@
 {
     "translation":{
       "empty_string":"",
+      "login.title": "Đăng nhập!",
+      "login.title.button": "Đăng nhập",
+      "login.forgot_password": "Quên mật khẩu",
+      "email": "Email",
+      "enter_your_email": "Nhập email của bạn",
+      "password": "Mật khẩu",
+      "enter_your_password": "Nhập mật khẩu của bạn",
       "button_next": "Tiếp",
       "button_get_started": "Bắt đầu ngay",
       "sign_in_title": "Đăng nhập!",
