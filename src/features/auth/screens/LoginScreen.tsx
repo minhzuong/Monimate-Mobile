@@ -10,79 +10,83 @@ import { APP_SCREEN } from "@src/navigation/ScreenTypes"
 
 const LoginScreen = () => {
     // useAppdispatch(onChangeAppTheme({appTheme: 'dark'}))
-    const { top: paddingTop } = useSafeAreaInsets() 
+    const { top: paddingTop } = useSafeAreaInsets()
     const { Colors } = useAppTheme()
     return (
-        <PageContainer 
+        <PageContainer
             padding
-            style={{
-                paddingTop: paddingTop + sizes._25sdp
-            }}
+            style={
+                [
+                    {
+                        paddingTop: paddingTop + sizes._25sdp
+                    },
+                    styles.container
+                ]
+            }
         >
-           
+            <Box>
                 <AppText
-                    text={t("login.title")}
+                    text={t("title.login")}
                     fontSize="28"
                     fontFamily="content_bold"
                 />
                 <AppText
-                    text="Login to continue using app"
-                    margin={{mt: sizes._5sdp}}
+                    text={t('subtitle.login')}
+                    margin={{ mt: sizes._5sdp }}
                 />
-
-            
-            <Box 
+            </Box>
+            <Box
                 gap={10}
-                style={[styles.containerInputs]}
+
             >
                 <AppInput
-                    label={t('email')}
-                    placeholder={t('enter_your_email')}
+                    label={t('label.email')}
+                    placeholder={t('placeholder.email')}
                     keyboardType="email-address"
                 />
                 <AppInput
-                    label={t('password')}
-                    placeholder={t('enter_your_password')}
+                    label={t('label.password')}
+                    placeholder={t('placeholder.password')}
                     secureTextEntry
                 />
                 <Box align="flex-end">
-                    <TouchableOpacity>
+                    <TouchableOpacity
+                        onPress={() => navigate(APP_SCREEN.FORGOT_PASSWORD)}
+                    >
                         <AppText
-                            text={t('login.forgot_password')}
+                            text={t('button.forgot_password')}
                             fontFamily="content_semibold"
                             color={Colors.primary}
                         />
                     </TouchableOpacity>
-
                 </Box>
 
             </Box>
             <AppButton
                 containerStyle={{
-                    marginTop: sizes._25sdp
+                    marginTop: sizes._10sdp
                 }}
-                title={t('login.title.button')}
+                title={t('button.login')}
             />
-                    <AppText 
-                        textAlign="center"
-                        margin={{mt: sizes._25sdp}}
-                    >
-                        Don't have an account?{' '}
-                        <AppText
-                            text="Register"
-                            fontFamily="content_semibold"
-                            color={Colors.primary}
-                            onPress={() => navigate(APP_SCREEN.REGISTER)}
-                        /> 
-                    </AppText>
+            <AppText
+                textAlign="center"
+            >
+                {t('question.account')}{' '}
+                <AppText
+                    text={t('button.register')}
+                    fontFamily="content_semibold"
+                    color={Colors.primary}
+                    onPress={() => navigate(APP_SCREEN.REGISTER)}
+                />
+            </AppText>
 
         </PageContainer>
     )
 }
 
 const styles = StyleSheet.create({
-    containerInputs: {
-        marginTop: sizes._15sdp
+    container: {
+        gap: sizes._24sdp
     }
 })
 

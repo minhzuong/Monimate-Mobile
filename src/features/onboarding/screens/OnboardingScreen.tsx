@@ -138,7 +138,7 @@ const OnboardingScreen = () => {
                         justify="center"
                     >
                         <AppText
-                            text="Back"
+                            text={t('button.back')}
                             fontFamily="content_semibold"
                             color={currentPage !== 0 ? Colors.defaultTextTitle : Colors.defaultTextSubTitle}
                             onPress={onBackPress}
@@ -147,7 +147,7 @@ const OnboardingScreen = () => {
                         
                 
                     <AppButton
-                        title={currentPage == data.length - 1 ? t("button_get_started") : t("button_next")}
+                        title={currentPage == data.length - 1 ? t("button.get_started") : t("button.next")}
                         titleStyle={{
                             textTransform: "uppercase"
                         }}

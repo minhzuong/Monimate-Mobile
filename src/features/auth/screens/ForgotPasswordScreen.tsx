@@ -2,17 +2,20 @@ import { StyleSheet, TouchableOpacity, View } from "react-native"
 import { useSafeAreaInsets } from "react-native-safe-area-context"
 import { t } from "i18next"
 
-import { useAppTheme } from "@src/shared/hooks"
 import { AppButton, AppInput, AppText, BackButton, Box, PageContainer } from "@src/shared/components"
 import { sizes } from "@src/shared/utils"
+import { useAppTheme } from "@src/shared/hooks"
 import { goBack, navigate } from "@src/navigation/NavigationServices"
 import { LeftArrowIcon } from "@src/assets"
+import { APP_SCREEN } from "@src/navigation/ScreenTypes"
 
 
-const RegisterScreen = () => {
+const ForgotPasswordScreen = () => {
     // useAppdispatch(onChangeAppTheme({appTheme: 'dark'}))
     const { top: paddingTop } = useSafeAreaInsets()
-    const { Colors } = useAppTheme()
+    const onSubmit = () => {
+        navigate(APP_SCREEN.VERIFY_OTP)
+    }
     return (
         <PageContainer
             padding
@@ -26,43 +29,38 @@ const RegisterScreen = () => {
             }
         >
             <Box align="flex-start">
-               <BackButton/>
+                <BackButton />
             </Box>
             <Box>
                 <AppText
-                    text={t("title.register")}
+                    text={t("title.forgot_password")}
                     fontSize="28"
                     fontFamily="content_bold"
-                />
-                <AppText
-                    text={t('subtitle.register')}
                     margin={{ mt: sizes._5sdp }}
                 />
+                <AppText
+                    text={t('subtitle.forgot_password')}
+                    margin={{ mt: sizes._5sdp }}
+                />
+
             </Box>
+
+
             <Box
-                gap={sizes._10sdp}
+                gap={10}
             >
                 <AppInput
                     label={t('label.email')}
                     placeholder={t('placeholder.email')}
                     keyboardType="email-address"
                 />
-                <AppInput
-                    label={t('label.password')}
-                    placeholder={t('placeholder.password')}
-                    secureTextEntry
-                />
-                <AppInput
-                    label={t('label.confirm_password')}
-                    placeholder={t('placeholder.confirm_password')}
-                    secureTextEntry
-                />
             </Box>
             <AppButton
                 containerStyle={{
                     marginTop: sizes._10sdp
                 }}
-                title={t('button.register')}
+                title={t('button.confirm')}
+                onPress={onSubmit}
             />
         </PageContainer>
     )
@@ -71,7 +69,7 @@ const RegisterScreen = () => {
 const styles = StyleSheet.create({
     container: {
         gap: sizes._24sdp
-    },
+    }
 })
 
-export default RegisterScreen
+export default ForgotPasswordScreen

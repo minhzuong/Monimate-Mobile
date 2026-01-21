@@ -1,16 +1,27 @@
 {
-    "translation":{
-      "empty_string":"",
-      "login.title": "Login!",
-      "login.title.button": "Login",
-      "login.forgot_password": "Forgot Password",
-      "email": "Email",
-      "enter_your_email": "Enter your email",
-      "password": "Password",
-      "enter_your_password": "Enter your password",
-      "button_next": "Next",
-      "button_get_started": "Get Started",
-      "sign_in_title": "Login!",
-      "error.title": "An error occurred"
-    }
+  "translation": {
+    "empty_string": "",
+    "title.login": "Login!",
+    "title.register": "Register",
+    "title.forgot_password": "Forgot Password?",
+    "title.otp_verification": "OTP Verification",
+    "subtitle.register": "Create an account to start using the app",
+    "subtitle.login": "Login to continue using the app",
+    "subtitle.forgot_password": "Don't worry! it occurs. Please enter the email address linked with your account.",
+    "subtitle.otp_verification": "Enter the verification code we just sent on your email address",
+    "button.login": "Login",
+    "button.register": "Register",
+    "button.next": "Next",
+    "button.get_started": "Get started",
+    "button.back": "Back",
+    "button.forgot_password": "Forgot Password",
+    "button.confirm": "Confirm",
+    "label.email": "Email",
+    "label.password": "Password",
+    "label.confirm_password": "Confirm password",
+    "placeholder.email": "Enter your email",
+    "placeholder.password": "Enter password",
+    "placeholder.confirm_password": "Enter confirm password",
+    "question.account": "Don't have an account?"
+  }
 }

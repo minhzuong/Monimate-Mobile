@@ -11,6 +11,8 @@ export enum APP_SCREEN {
     ONBOARDING = 'ONBOARDING',
     LOGIN = 'LOGIN',
     REGISTER = 'REGISTER',
+    FORGOT_PASSWORD = 'FORGOT_PASSWORD',
+    VERIFY_OTP = 'VERIFY_OTP',
     HOME = 'HOME',
     ACCOUNT_OVERVIEW = 'ACCOUNT_OVERVIEW'
 }
@@ -28,6 +30,8 @@ export type UnAuthenticationParamsList = {
     [APP_SCREEN.ONBOARDING]: undefined;
     [APP_SCREEN.LOGIN]: undefined;
     [APP_SCREEN.REGISTER]: undefined;
+    [APP_SCREEN.FORGOT_PASSWORD]: undefined;
+    [APP_SCREEN.VERIFY_OTP]: undefined;
 }
 
 

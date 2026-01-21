@@ -27,7 +27,10 @@ const AppInput = ({
         <View style={[styles.container, containerStyle]}>
             <Box gap={5}>
                 {!!label && (
-                    <AppText text={label}/>
+                    <AppText 
+                        text={label}
+                        fontFamily="content_medium"
+                    />
                 )}
                 <View 
                     style={[

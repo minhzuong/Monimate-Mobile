@@ -120,7 +120,8 @@ const AppText: FC<DefaultTextProps> = ({
                     textAlign: props.textAlign ?? 'auto',
                 },
                 marginStyles,
-                props.style]}
+                props.style
+            ]}
         >{displayText}</Text>
     )
 }

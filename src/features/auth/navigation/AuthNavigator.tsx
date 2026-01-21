@@ -3,7 +3,7 @@ import { CardStyleInterpolators, createStackNavigator, StackNavigationOptions } 
 import { APP_SCREEN, UnAuthenticationParamsList } from "@src/navigation/ScreenTypes"
 import { OnboardingScreen } from "@src/features/onboarding/screens"
 import { useAppSelector } from "@src/shared/hooks"
-import { LoginScreen, RegisterScreen } from "../screens"
+import { ForgotPasswordScreen, LoginScreen, RegisterScreen, VerifyOtpScreen } from "../screens"
 
 const AuthStack = createStackNavigator<UnAuthenticationParamsList>()
 
@@ -38,6 +38,14 @@ const AuthNavigator = () => {
         {
             name: APP_SCREEN.REGISTER,
             component: RegisterScreen
+        },
+        {
+            name: APP_SCREEN.FORGOT_PASSWORD,
+            component: ForgotPasswordScreen
+        },
+        {
+            name: APP_SCREEN.VERIFY_OTP,
+            component: VerifyOtpScreen
         },
     ]
 
