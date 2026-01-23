@@ -1,17 +1,25 @@
 import { useSafeAreaInsets } from "react-native-safe-area-context"
+import { t } from "i18next"
+
 import { AppButton, AppInput, AppText, Box, PageContainer } from "@src/shared/components"
 import { sizes } from "@src/shared/utils"
-import { t } from "i18next"
 import { StyleSheet, TouchableOpacity, View } from "react-native"
-import { useAppTheme } from "@src/shared/hooks"
+import { useAppDispatch, useAppTheme } from "@src/shared/hooks"
 import { navigate } from "@src/navigation/NavigationServices"
 import { APP_SCREEN } from "@src/navigation/ScreenTypes"
+import { globalLoading } from "@src/shared/components/GlobalLoading"
+import { onSetToken } from "@src/redux"
 
 
 const LoginScreen = () => {
     // useAppdispatch(onChangeAppTheme({appTheme: 'dark'}))
     const { top: paddingTop } = useSafeAreaInsets()
     const { Colors } = useAppTheme()
+    const onLogin = () => {
+        useAppDispatch(onSetToken({
+            accessToken: "tokennadnfnsadfn"
+        }))
+    }
     return (
         <PageContainer
             padding
@@ -67,6 +75,7 @@ const LoginScreen = () => {
                     marginTop: sizes._10sdp
                 }}
                 title={t('button.login')}
+                onPress={onLogin}
             />
             <AppText
                 textAlign="center"
@@ -79,7 +88,6 @@ const LoginScreen = () => {
                     onPress={() => navigate(APP_SCREEN.REGISTER)}
                 />
             </AppText>
-
         </PageContainer>
     )
 }

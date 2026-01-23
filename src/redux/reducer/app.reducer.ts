@@ -1,6 +1,8 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice, PayloadAction } from "@reduxjs/toolkit"
+import { AppStateEntity } from "@src/models";
 
-const initalState = {
+const initalState: AppStateEntity = {
+    accessToken: undefined,
     showOnboarding: true
 }
 
@@ -11,11 +13,15 @@ const slice = createSlice({
         onDisableOnboarding: state => {
             state.showOnboarding = false;
         },
+        onSetToken: (state, {payload}: PayloadAction<{accessToken: string}>) => {
+            state.accessToken = payload.accessToken
+        }
     }
 })
 
 const appReducer = slice.reducer
 export default appReducer
 export const {
-    onDisableOnboarding
+    onDisableOnboarding,
+    onSetToken
 } = slice.actions

@@ -12,6 +12,8 @@ import { RXStore } from '@src/shared/hooks';
 import { AppContainer } from '@src/navigation';
 import "@src/translations/i18n"
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { GlobalLoading } from '@src/shared/components';
+import { globalLoadingRef } from '@src/shared/components/GlobalLoading';
 
 function App() {
 
@@ -25,6 +27,7 @@ function App() {
           <Suspense fallback={null}>
             <AppContainer/>
             <RXStore />
+            <GlobalLoading ref={globalLoadingRef}/>
           </Suspense>
          </PersistGate>
       </Provider>
