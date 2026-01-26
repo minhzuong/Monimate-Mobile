@@ -11,6 +11,7 @@
     "subtitle.otp_verification": "Vui lòng nhập mã xác minh chúng tôi vừa gửi đến email của bạn.",
     "button.login": "Đăng nhập",
     "button.register": "Đăng ký",
+    "button.logout": "Đăng xuất",
     "button.next": "Tiếp",
     "button.back": "Quay lại",
     "button.get_started": "Bắt đầu thôi",
@@ -22,6 +23,8 @@
     "placeholder.email": "Nhập email",
     "placeholder.password": "Nhập mật khẩu",
     "placeholder.confirm_password": "Nhập mật khẩu",
+    "tabbar.home": "Trang chủ",
+    "tabbar.account": "Tài khoản",
     "question.account": "Bạn chưa có tài khoản?"
   }
 }

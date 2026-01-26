@@ -10,3 +10,5 @@ export const Spacing = {
     xxl: sizes._32sdp,
 }
 
+export const SPACING_PAGE = sizes._16sdp
+

@@ -9,7 +9,7 @@ import Animated, {
 
 import { AppButton, AppText, Box } from "@src/shared/components"
 import { useAppDispatch, useAppTheme } from "@src/shared/hooks"
-import { _screen_width, sizes, SPACING_PAGE } from "@src/shared/utils"
+import { _screen_width, sizes } from "@src/shared/utils"
 
 import { navigate } from "@src/navigation/NavigationServices";
 import { APP_SCREEN } from "@src/navigation/ScreenTypes";
@@ -17,6 +17,7 @@ import { onDisableOnboarding } from "@src/redux";
 
 import PageItem, { DataType } from "../components/PageItem"
 import { PageDot } from "../components"
+import { SPACING_PAGE } from "@src/shared/themes";
 
 const { width } = Dimensions.get("screen")
 const OnboardingScreen = () => {

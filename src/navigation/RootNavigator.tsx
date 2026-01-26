@@ -14,7 +14,8 @@ const RootNavigator = () => {
             {!isLoggedIn ? ( 
                 <RookStack.Screen name={APP_NAVIGATOR.AUTH} component={AuthNavigator}/>
             ) : (
-               <RookStack.Screen name={APP_NAVIGATOR.MAIN} component={MainNavigator}/>
+                <RookStack.Screen 
+                    name={APP_NAVIGATOR.MAIN} component={MainNavigator}/>
             )}
         </RookStack.Navigator>
     )

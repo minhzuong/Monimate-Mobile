@@ -1,9 +1,10 @@
 import React, { FC } from "react"
-import { StyleSheet, Text, TextStyle, TouchableOpacity, TouchableOpacityProps, View, ViewStyle } from "react-native"
+import { StyleSheet, TextStyle, TouchableOpacity, TouchableOpacityProps, View, ViewStyle } from "react-native"
 
 import { sizes } from "@src/shared/utils"
-import AppText from "../AppText"
 import { useAppTheme } from "@src/shared/hooks"
+import { ACTIVE_OPACITY_TOUCH } from "@src/shared/themes"
+import AppText from "../AppText"
 
 interface AppButtonProps extends TouchableOpacityProps {
     title?: string
@@ -30,7 +31,7 @@ const AppButton: FC<AppButtonProps> = ({
         <View style={[containerStyle]}>
             <TouchableOpacity
                 {...rest}
-                activeOpacity={0.6}
+                activeOpacity={ACTIVE_OPACITY_TOUCH}
                 style={[
                     styles.button,
                     {

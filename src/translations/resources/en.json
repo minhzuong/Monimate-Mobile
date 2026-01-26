@@ -11,6 +11,7 @@
     "subtitle.otp_verification": "Enter the verification code we just sent on your email address",
     "button.login": "Login",
     "button.register": "Register",
+    "button.logout": "Logout",
     "button.next": "Next",
     "button.get_started": "Get started",
     "button.back": "Back",
@@ -22,6 +23,8 @@
     "placeholder.email": "Enter your email",
     "placeholder.password": "Enter password",
     "placeholder.confirm_password": "Enter confirm password",
+    "tabbar.home": "Home",
+    "tabbar.account": "Account",
     "question.account": "Don't have an account?"
   }
 }

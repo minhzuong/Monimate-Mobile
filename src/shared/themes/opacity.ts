@@ -1,0 +1,1 @@
+export const ACTIVE_OPACITY_TOUCH = 0.6

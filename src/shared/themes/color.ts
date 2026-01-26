@@ -23,6 +23,8 @@ export const DarkColors = {
     disableButtonBackground: COLORS.grayBackground,
     inputFocusBorder: COLORS.blueGray,
     inputOutFocusBorder: COLORS.borderGray,
+    tabBarActiveTintColor: COLORS.primaryPurple,
+    tabBarInActiveTintColor: COLORS.blueGray,
     error: COLORS.errorRed
 }
 
@@ -40,5 +42,7 @@ export const LightColor = {
     disableButtonBackground: COLORS.grayBackground,
     inputFocusBorder: COLORS.blueGray,
     inputOutFocusBorder: COLORS.borderGray,
+    tabBarActiveTintColor: COLORS.primaryPurple,
+    tabBarInActiveTintColor: COLORS.blueGray,
     error: COLORS.errorRed
 }

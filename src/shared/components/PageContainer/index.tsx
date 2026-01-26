@@ -3,7 +3,7 @@ import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { useAppTheme } from '@src/shared/hooks';
-import { sizes, SPACING_PAGE } from '@src/shared/utils';
+import { Spacing, SPACING_PAGE } from '@src/shared/themes';
 
 interface PageContainerProps {
   children: React.ReactNode;
@@ -18,7 +18,7 @@ const PageContainer: FC<PageContainerProps> = ({
   style,
 }) => {
   const inset = useSafeAreaInsets();
-  const { Colors, Spacing } = useAppTheme();
+  const { Colors } = useAppTheme();
   return (
     <View
       style={[

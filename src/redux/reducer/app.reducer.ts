@@ -15,6 +15,9 @@ const slice = createSlice({
         },
         onSetToken: (state, {payload}: PayloadAction<{accessToken: string}>) => {
             state.accessToken = payload.accessToken
+        },
+        onLogout: (state) => {
+            state.accessToken = undefined
         }
     }
 })
@@ -23,5 +26,6 @@ const appReducer = slice.reducer
 export default appReducer
 export const {
     onDisableOnboarding,
-    onSetToken
+    onSetToken,
+    onLogout
 } = slice.actions
