@@ -5,6 +5,9 @@
     "title.register": "Register",
     "title.forgot_password": "Forgot Password?",
     "title.otp_verification": "OTP Verification",
+    "title.user_settings": "USER SETTINGS",
+    "title.notifications": "NOTIFICATIONS",
+    "title.legal": "LEGAL",
     "subtitle.register": "Create an account to start using the app",
     "subtitle.login": "Login to continue using the app",
     "subtitle.forgot_password": "Don't worry! it occurs. Please enter the email address linked with your account.",
@@ -17,6 +20,7 @@
     "button.back": "Back",
     "button.forgot_password": "Forgot Password",
     "button.confirm": "Confirm",
+    "button.delete_account": "Delete my account",
     "label.email": "Email",
     "label.password": "Password",
     "label.confirm_password": "Confirm password",
@@ -25,6 +29,14 @@
     "placeholder.confirm_password": "Enter confirm password",
     "tabbar.home": "Home",
     "tabbar.account": "Account",
+    "item.language": "Language",
+    "item.profile_settings": "Profile Settings",
+    "item.password_securiry": "Password & Security",
+    "item.notification": "Notification",
+    "item.privacy_policy": "Privacy policy",
+    "item.terms": "Terms",
+    "item.remove_cache": "Remove cache",
+    "header.account": "Account",
     "question.account": "Don't have an account?"
   }
 }

@@ -5,6 +5,9 @@
     "title.register": "Đăng ký!",
     "title.forgot_password": "Quên mật khẩu?",
     "title.otp_verification": "Xác thực OTP",
+    "title.user_settings": "CÀI ĐẶT TÀI KHOẢN",
+    "title.notifications": "THÔNG BÁO",
+    "title.legal": "ĐIỀU KHOẢN SỬ DỤNG",
     "subtitle.register": "Tạo tài khoản để bắt đầu sử dụng ứng dụng",
     "subtitle.login": "Đăng nhập để tiếp tục sử dụng ứng dụng",
     "subtitle.forgot_password": "Đừng lo! Vui lòng nhập email đã liên kết với tài khoản của bạn.",
@@ -17,6 +20,7 @@
     "button.get_started": "Bắt đầu thôi",
     "button.forgot_password": "Quên mật khẩu",
     "button.confirm": "Xác nhận",
+    "button.delete_account": "Xoá tài khoản",
     "label.email": "Email",
     "label.password": "Mật khẩu",
     "label.confirm_password": "Xác nhận mật khẩu",
@@ -25,6 +29,14 @@
     "placeholder.confirm_password": "Nhập mật khẩu",
     "tabbar.home": "Trang chủ",
     "tabbar.account": "Tài khoản",
+    "item.language": "Ngôn ngữ",
+    "item.profile_settings": "Cài đặt hồ sơ",
+    "item.password_securiry": "Mật khẩu & Bảo mật",
+    "item.notification": "Thông báo",
+    "item.privacy_policy": "Chính sách quyền riêng tư",
+    "item.terms": "Điều khoản sử dụng",
+    "item.remove_cache": "Xoá bộ nhớ đệm",
+    "header.account": "Tài khoản",
     "question.account": "Bạn chưa có tài khoản?"
   }
 }

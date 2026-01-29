@@ -25,7 +25,7 @@ const Section = ({title, children}: SectionProps) => {
 
 const styles = StyleSheet.create({
     section: {
-        marginTop: sizes._15sdp
+        // marginTop: sizes._15sdp
     },
     sectionTitle: {
         letterSpacing: 0.5

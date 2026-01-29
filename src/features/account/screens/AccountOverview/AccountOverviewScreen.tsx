@@ -1,15 +1,16 @@
-import { StyleSheet, TouchableOpacity } from "react-native"
+import { StyleSheet, TouchableOpacity, View } from "react-native"
 import { t } from "i18next"
 
-import { AppText, Box, PageContainer } from "@src/shared/components"
+import { AppHeader, AppText, Box, PageContainer } from "@src/shared/components"
 import { useAppDispatch, useAppTheme } from "@src/shared/hooks"
 import { onLogout } from "@src/redux"
 import { globalLoading } from "@src/shared/components/GlobalLoading"
 import { sizes } from "@src/shared/utils"
 import { LogoutIcon } from "@src/assets"
 import { MenuItem, Section } from "./components"
+import { SPACING_PAGE } from "@src/shared/themes"
 const AccountOverviewScreen = () => {
-    
+
     const { Colors } = useAppTheme()
 
     const handleLogout = () => {
@@ -17,56 +18,66 @@ const AccountOverviewScreen = () => {
         setTimeout(() => {
             useAppDispatch(onLogout())
             globalLoading.hide()
-        },500)
-    } 
+        }, 500)
+    }
 
     return (
-        <PageContainer 
-            padding
+        <PageContainer
             style={[styles.container]}
         >
-            <Section title="USER SETTINGS">
-                <MenuItem title="Language"/> 
-                <MenuItem title="Profile Settings"/> 
-                <MenuItem title="Password & Security"/> 
-            </Section>
-            <Section title="NOTIFICATIONS">
-                <MenuItem title="Notifications"/> 
-            </Section>
-            <Section title="LEGAL">
-                <MenuItem title="Privacy policy"/> 
-                <MenuItem title="Terms"/> 
-                <MenuItem title="Remove cache"/> 
-            </Section>
-            <TouchableOpacity
-              style={{
-                paddingVertical: sizes._16sdp
-              }}
-            >
-                <AppText 
-                    text="Delete my account"
-                    style={{
-                        color: Colors.error
-                    }}
-                />
-            </TouchableOpacity>
-            <TouchableOpacity
-                style={{
-                    paddingVertical: sizes._16sdp,
-                    flexDirection: "row",
-                    justifyContent: "space-between"
-                }}
-                onPress={handleLogout}
-            >
-                <Box 
-                    horizontal
-                    gap={sizes._10sdp}
-                >
-                    <LogoutIcon color={Colors.defaultTextColor}/>
-                    <AppText text="Logout"/>
+            <AppHeader 
+                title={t('header.account')}
+                showBack={false}
+            />
+            <Box style={{
+                padding: SPACING_PAGE,
+            }}>
+                <Box gap={sizes._15sdp}>
+                    <Section title={t('title.user_settings')}>
+                        <MenuItem title={t('item.language')} />
+                        <MenuItem title={t('item.profile_settings')} />
+                        <MenuItem title={t('item.password_securiry')} />
+                    </Section>
+                    <Section title={t('title.notifications')}>
+                        <MenuItem title={t('item.notification')} />
+                    </Section>
+                    <Section title={t('title.legal')}>
+                        <MenuItem title={t('item.privacy_policy')} />
+                        <MenuItem title={t('item.terms')} />
+                        <MenuItem title={t('item.remove_cache')} />
+                    </Section>
+
                 </Box>
-                <AppText text="1.0.0"/>
-            </TouchableOpacity>
+                <TouchableOpacity
+                    style={{
+                        paddingVertical: sizes._16sdp
+                    }}
+                >
+                    <AppText
+                        text={t('button.delete_account')}
+                        style={{
+                            color: Colors.error
+                        }}
+                    />
+                </TouchableOpacity>
+                <TouchableOpacity
+                    style={{
+                        paddingVertical: sizes._16sdp,
+                        flexDirection: "row",
+                        justifyContent: "space-between"
+                    }}
+                    onPress={handleLogout}
+                >
+                    <Box
+                        horizontal
+                        gap={sizes._10sdp}
+                    >
+                        <LogoutIcon color={Colors.defaultTextColor} />
+                        <AppText text={t('button.logout')} />
+                    </Box>
+                    <AppText text="1.0.0" />
+                </TouchableOpacity>
+            </Box>
         </PageContainer>
     )
 }
