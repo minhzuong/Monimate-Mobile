@@ -140,6 +140,40 @@ const LogoutIcon = (props: any) => (
   </Svg>
 )
 
+const RadioUnchekedIcon = (props: any) => (
+  <Svg
+    width={sizes._24sdp}
+    height={sizes._24sdp}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <Path
+      d="M12 20c1.497 0 2.854-.35 4.07-1.053a7.556 7.556 0 0 0 2.877-2.877C19.65 14.842 20 13.485 20 12c0-1.497-.35-2.854-1.053-4.07a7.397 7.397 0 0 0-2.877-2.877C14.854 4.35 13.497 4 12 4c-1.485 0-2.842.35-4.07 1.053A7.554 7.554 0 0 0 5.053 7.93C4.35 9.146 4 10.503 4 12c0 1.485.35 2.842 1.053 4.07a7.72 7.72 0 0 0 2.877 2.877C9.158 19.65 10.515 20 12 20zm0 2a9.884 9.884 0 0 1-5.018-1.333 10.107 10.107 0 0 1-3.649-3.65A9.884 9.884 0 0 1 2 12c0-1.813.444-3.485 1.333-5.018a9.97 9.97 0 0 1 3.65-3.631A9.786 9.786 0 0 1 12 2c1.813 0 3.485.45 5.018 1.35A9.796 9.796 0 0 1 20.648 7C21.55 8.532 22 10.199 22 12s-.45 3.474-1.35 5.017a9.929 9.929 0 0 1-3.65 3.65A9.79 9.79 0 0 1 12 22z"
+      fill={props.color ?? '#292D32'}
+    />
+  </Svg>
+)
+
+const RadioCheckedIcon = (props: any) => {
+  return (
+    <Svg
+      width={sizes._24sdp}
+      height={sizes._24sdp}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <Path
+        d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16.001A8 8 0 0 0 12 20zm0-3a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"
+        fill={props.color ?? '#292D32'}
+      />
+    </Svg>
+  )
+}
+
 export {
   LeftArrowIcon,
   PasswordShowInputIcon,
@@ -147,5 +181,7 @@ export {
   TabBarHome,
   TabBarAccount,
   ArrowRightIcon,
-  LogoutIcon
+  LogoutIcon,
+  RadioUnchekedIcon,
+  RadioCheckedIcon
 }

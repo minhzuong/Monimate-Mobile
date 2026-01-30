@@ -1,16 +1,14 @@
-import { StyleSheet, TouchableOpacity, View } from "react-native"
+import { StyleSheet } from "react-native"
 import { useSafeAreaInsets } from "react-native-safe-area-context"
-import { t } from "i18next"
+import { useTranslation } from "react-i18next"
 
 import { useAppTheme } from "@src/shared/hooks"
 import { AppButton, AppInput, AppText, BackButton, Box, PageContainer } from "@src/shared/components"
 import { sizes } from "@src/shared/utils"
-import { goBack, navigate } from "@src/navigation/NavigationServices"
-import { LeftArrowIcon } from "@src/assets"
-
 
 const RegisterScreen = () => {
     // useAppdispatch(onChangeAppTheme({appTheme: 'dark'}))
+    const { t } = useTranslation()
     const { top: paddingTop } = useSafeAreaInsets()
     const { Colors } = useAppTheme()
     return (

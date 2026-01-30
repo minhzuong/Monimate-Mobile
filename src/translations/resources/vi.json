@@ -29,14 +29,17 @@
     "placeholder.confirm_password": "Nhập mật khẩu",
     "tabbar.home": "Trang chủ",
     "tabbar.account": "Tài khoản",
-    "item.language": "Ngôn ngữ",
+    "item.language": "Ngôn ngữ ứng dụng",
     "item.profile_settings": "Cài đặt hồ sơ",
     "item.password_securiry": "Mật khẩu & Bảo mật",
     "item.notification": "Thông báo",
     "item.privacy_policy": "Chính sách quyền riêng tư",
     "item.terms": "Điều khoản sử dụng",
     "item.remove_cache": "Xoá bộ nhớ đệm",
+    "language.english": "English(Tiếng Anh)",
+    "language.vietnamese": "Tiếng Việt(Tiếng Việt)",
     "header.account": "Tài khoản",
+    "header.language": "Ngôn ngữ",
     "question.account": "Bạn chưa có tài khoản?"
   }
 }

@@ -29,14 +29,17 @@
     "placeholder.confirm_password": "Enter confirm password",
     "tabbar.home": "Home",
     "tabbar.account": "Account",
-    "item.language": "Language",
+    "item.language": "App Language",
     "item.profile_settings": "Profile Settings",
     "item.password_securiry": "Password & Security",
     "item.notification": "Notification",
     "item.privacy_policy": "Privacy policy",
     "item.terms": "Terms",
     "item.remove_cache": "Remove cache",
+    "language.english": "English(English)",
+    "language.vietnamese": "Tiếng Việt(Vietnamese)",
     "header.account": "Account",
+    "header.language": "Language",
     "question.account": "Don't have an account?"
   }
 }

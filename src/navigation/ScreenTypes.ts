@@ -14,7 +14,8 @@ export enum APP_SCREEN {
     FORGOT_PASSWORD = 'FORGOT_PASSWORD',
     VERIFY_OTP = 'VERIFY_OTP',
     HOME = 'HOME',
-    ACCOUNT_OVERVIEW = 'ACCOUNT_OVERVIEW'
+    ACCOUNT_OVERVIEW = 'ACCOUNT_OVERVIEW',
+    SETTING_LANGUAGE = 'SETTING_LANGUAGE'
 }
 
 export type AuthenticationParamsList = {
@@ -22,6 +23,7 @@ export type AuthenticationParamsList = {
         screen?: string
     };
     [APP_NAVIGATOR.MAIN_TAB]: undefined;
+    [APP_SCREEN.SETTING_LANGUAGE]: undefined;
     [APP_NAVIGATOR.MAIN]: undefined
 }
 

@@ -1,19 +1,18 @@
-import { Text } from "react-native"
+import { useTranslation } from "react-i18next"
+
 import { HomeScreen } from "@features/home/screens"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
-import { t } from "i18next"
-
-import { AccountNavigator } from "@features/account/navigation"
 import { APP_FONTS } from "@src/shared/themes"
 import { sizes } from "@src/shared/utils"
 import { useAppTheme } from "@src/shared/hooks"
-
-import { APP_NAVIGATOR, APP_SCREEN } from "./ScreenTypes"
+import { APP_SCREEN } from "./ScreenTypes"
 import { TabBarAccount, TabBarHome } from "@src/assets"
+import { AccountOverviewScreen } from "@src/features/account/screens"
 const Tab = createBottomTabNavigator()
 
 const MainTabNavigator = () => {
 
+    const { t } = useTranslation()
     const { Colors } = useAppTheme()
 
     return (
@@ -44,14 +43,14 @@ const MainTabNavigator = () => {
 
             />
             <Tab.Screen
-                name={APP_NAVIGATOR.ACCOUNT}
+                name={APP_SCREEN.ACCOUNT_OVERVIEW}
                 options={{
                     tabBarLabel: t('tabbar.account'),
                     tabBarIcon: ({ focused }) => {
                         return <TabBarAccount color={focused ? Colors.tabBarActiveTintColor : Colors.tabBarInActiveTintColor} />
                     }
                 }}
-                component={AccountNavigator}
+                component={AccountOverviewScreen}
             />
         </Tab.Navigator>
     )

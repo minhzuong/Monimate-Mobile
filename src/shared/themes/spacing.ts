@@ -8,6 +8,7 @@ export const Spacing = {
     lg: sizes._16sdp,
     xl: sizes._24sdp,
     xxl: sizes._32sdp,
+    spacingSpace: sizes._16sdp
 }
 
 export const SPACING_PAGE = sizes._16sdp

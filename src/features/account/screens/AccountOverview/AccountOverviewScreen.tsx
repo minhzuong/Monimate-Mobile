@@ -1,5 +1,6 @@
 import { StyleSheet, TouchableOpacity, View } from "react-native"
-import { t } from "i18next"
+import { useTranslation } from "react-i18next"
+
 
 import { AppHeader, AppText, Box, PageContainer } from "@src/shared/components"
 import { useAppDispatch, useAppTheme } from "@src/shared/hooks"
@@ -7,10 +8,14 @@ import { onLogout } from "@src/redux"
 import { globalLoading } from "@src/shared/components/GlobalLoading"
 import { sizes } from "@src/shared/utils"
 import { LogoutIcon } from "@src/assets"
+import { Spacing } from "@src/shared/themes"
+
 import { MenuItem, Section } from "./components"
-import { SPACING_PAGE } from "@src/shared/themes"
+import { navigate } from "@src/navigation/NavigationServices"
+import { APP_SCREEN } from "@src/navigation/ScreenTypes"
 const AccountOverviewScreen = () => {
 
+    const { t } = useTranslation()
     const { Colors } = useAppTheme()
 
     const handleLogout = () => {
@@ -30,11 +35,14 @@ const AccountOverviewScreen = () => {
                 showBack={false}
             />
             <Box style={{
-                padding: SPACING_PAGE,
+                padding: Spacing.spacingSpace,
             }}>
                 <Box gap={sizes._15sdp}>
                     <Section title={t('title.user_settings')}>
-                        <MenuItem title={t('item.language')} />
+                        <MenuItem
+                            title={t('item.language')} 
+                            onPress={() => navigate(APP_SCREEN.SETTING_LANGUAGE)}
+                        />
                         <MenuItem title={t('item.profile_settings')} />
                         <MenuItem title={t('item.password_securiry')} />
                     </Section>

@@ -1,5 +1,5 @@
 import { useSafeAreaInsets } from "react-native-safe-area-context"
-import { t } from "i18next"
+import { useTranslation } from "react-i18next"
 
 import { AppButton, AppInput, AppText, Box, PageContainer } from "@src/shared/components"
 import { sizes } from "@src/shared/utils"
@@ -13,6 +13,7 @@ import { onSetToken } from "@src/redux"
 
 const LoginScreen = () => {
     // useAppdispatch(onChangeAppTheme({appTheme: 'dark'}))
+    const { t } = useTranslation()
     const { top: paddingTop } = useSafeAreaInsets()
     const { Colors } = useAppTheme()
     const onLogin = () => {

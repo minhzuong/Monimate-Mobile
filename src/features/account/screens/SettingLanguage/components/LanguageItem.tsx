@@ -1,17 +1,28 @@
 import { StyleSheet, TouchableOpacity } from "react-native"
 
-import { ArrowRightIcon } from "@src/assets"
+import { RadioCheckedIcon, RadioUnchekedIcon } from "@src/assets"
+import { AppLanguage } from "@src/models"
 import { AppText } from "@src/shared/components"
 import { useAppTheme } from "@src/shared/hooks"
 import { sizes } from "@src/shared/utils"
 
-interface MenuItemProps {
-    title: string,
-    onPress?: () => void;
+export interface LanguageItemState {
+    name: string,
+    lng: AppLanguage
 }
 
-const MenuItem = ({title, onPress}: MenuItemProps) => {
+interface LanguageItemProps {
+    item: LanguageItemState,
+    checked: boolean,
+    onPress: () => any
+} 
+
+
+const LanguageItem = ({ item, checked, onPress }: LanguageItemProps) => {
+
     const { Colors } = useAppTheme()
+  
+    
     return (
         <TouchableOpacity 
             style={[styles.container, {
@@ -19,8 +30,12 @@ const MenuItem = ({title, onPress}: MenuItemProps) => {
             }]}
             onPress={onPress}
         >
-            <AppText text={title}/>
-            <ArrowRightIcon size={sizes._15sdp} color={Colors.defaultTextColor}/>
+            <AppText text={item.name} />
+            {checked ? (
+                <RadioCheckedIcon color={Colors.primary} />
+            ) : (
+                <RadioUnchekedIcon color={Colors.grayBackground} />
+            )}
         </TouchableOpacity>
     )
 }
@@ -35,4 +50,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default MenuItem
+export default LanguageItem

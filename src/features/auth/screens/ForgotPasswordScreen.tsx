@@ -1,6 +1,6 @@
 import { StyleSheet, TouchableOpacity, View } from "react-native"
 import { useSafeAreaInsets } from "react-native-safe-area-context"
-import { t } from "i18next"
+import { useTranslation } from "react-i18next"
 
 import { AppButton, AppInput, AppText, BackButton, Box, PageContainer } from "@src/shared/components"
 import { sizes } from "@src/shared/utils"
@@ -12,6 +12,7 @@ import { APP_SCREEN } from "@src/navigation/ScreenTypes"
 
 const ForgotPasswordScreen = () => {
     // useAppdispatch(onChangeAppTheme({appTheme: 'dark'}))
+    const { t } = useTranslation()
     const { top: paddingTop } = useSafeAreaInsets()
     const onSubmit = () => {
         navigate(APP_SCREEN.VERIFY_OTP)

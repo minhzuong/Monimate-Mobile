@@ -29,7 +29,7 @@ const AppHeader = ({ title, showBack = true, rightContent }: AppHeaderProps) => 
                 }
             ]}
         >
-            <Box>
+            <Box style={styles.side}>
                 {
                     showBack && (
                         <TouchableOpacity
@@ -54,8 +54,8 @@ const AppHeader = ({ title, showBack = true, rightContent }: AppHeaderProps) => 
                 fontFamily="content_medium"
                 textAlign="center"
             />
-            <Box>
-                {!!rightContent && rightContent}
+            <Box style={styles.side}>
+                {rightContent}
             </Box>
         </Box>
     )
@@ -66,6 +66,10 @@ const styles = StyleSheet.create({
         paddingHorizontal: sizes._16sdp,
         paddingVertical: sizes._12sdp,
         borderBottomWidth: 0.5,
+    },
+
+    side: {
+        width: sizes._40sdp
     }
 })
 
