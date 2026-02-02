@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next"
 
 
 import { AppHeader, AppText, Box, PageContainer } from "@src/shared/components"
-import { useAppDispatch, useAppTheme } from "@src/shared/hooks"
+import { useAppDispatch, useAppSelector, useAppTheme } from "@src/shared/hooks"
 import { onLogout } from "@src/redux"
 import { globalLoading } from "@src/shared/components/GlobalLoading"
 import { sizes } from "@src/shared/utils"
@@ -40,7 +40,7 @@ const AccountOverviewScreen = () => {
                 <Box gap={sizes._15sdp}>
                     <Section title={t('title.user_settings')}>
                         <MenuItem
-                            title={t('item.language')} 
+                            title={t('item.language')}
                             onPress={() => navigate(APP_SCREEN.SETTING_LANGUAGE)}
                         />
                         <MenuItem title={t('item.profile_settings')} />

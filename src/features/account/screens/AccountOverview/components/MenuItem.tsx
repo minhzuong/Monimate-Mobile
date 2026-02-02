@@ -1,16 +1,18 @@
+import { ReactNode } from "react"
 import { StyleSheet, TouchableOpacity } from "react-native"
 
 import { ArrowRightIcon } from "@src/assets"
-import { AppText } from "@src/shared/components"
+import { AppText, Box } from "@src/shared/components"
 import { useAppTheme } from "@src/shared/hooks"
 import { sizes } from "@src/shared/utils"
 
 interface MenuItemProps {
     title: string,
-    onPress?: () => void;
+    rightContent?: ReactNode,
+    onPress?: () => void,
 }
 
-const MenuItem = ({title, onPress}: MenuItemProps) => {
+const MenuItem = ({title, rightContent, onPress}: MenuItemProps) => {
     const { Colors } = useAppTheme()
     return (
         <TouchableOpacity 
@@ -20,7 +22,10 @@ const MenuItem = ({title, onPress}: MenuItemProps) => {
             onPress={onPress}
         >
             <AppText text={title}/>
-            <ArrowRightIcon size={sizes._15sdp} color={Colors.defaultTextColor}/>
+            <Box horizontal gap={sizes._8sdp} align="center">
+                {!!rightContent && rightContent}
+                <ArrowRightIcon size={sizes._16sdp} color={Colors.defaultTextColor}/>
+            </Box>
         </TouchableOpacity>
     )
 }

@@ -6,16 +6,11 @@ import { Spacing } from "@src/shared/themes"
 import { useAppDispatch, useAppSelector } from "@src/shared/hooks"
 import { onChangeLanguage } from "@src/redux"
 import { LanguageItem } from "./components"
-import { LanguageItemState } from "./components/LanguageItem"
+import { LANGUAGES } from "@src/translations/languages"
 
 const SettingLanguageScreen = () => {
 
-    const languages: LanguageItemState[] = [
-        {name: t('language.vietnamese'), lng: AppLanguage.vi},
-        {name: t('language.english'), lng: AppLanguage.en}
-    ]
-
-    const currentLanguage = useAppSelector(state => state.languageReducer.appLanguage)
+    const appLanguage = useAppSelector(state => state.languageReducer.appLanguage)
 
     return (
         <PageContainer>
@@ -23,12 +18,12 @@ const SettingLanguageScreen = () => {
             <Box style={{
                 padding: Spacing.spacingSpace,
             }}>
-                {languages.map((item, index) => (
+                {LANGUAGES.map((item, index) => (
                     <LanguageItem
-                        key={item.lng}
+                        key={item.code}
                         item={item}
-                        checked={item.lng === currentLanguage}
-                        onPress={() => useAppDispatch(onChangeLanguage(item.lng))}
+                        checked={item.code === appLanguage}
+                        onPress={() => useAppDispatch(onChangeLanguage(item.code))}
                     />
                 ))}
 

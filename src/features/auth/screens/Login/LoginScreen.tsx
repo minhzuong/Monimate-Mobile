@@ -7,8 +7,8 @@ import { StyleSheet, TouchableOpacity, View } from "react-native"
 import { useAppDispatch, useAppTheme } from "@src/shared/hooks"
 import { navigate } from "@src/navigation/NavigationServices"
 import { APP_SCREEN } from "@src/navigation/ScreenTypes"
-import { globalLoading } from "@src/shared/components/GlobalLoading"
 import { onSetToken } from "@src/redux"
+import { LocaleSelector } from "./components"
 
 
 const LoginScreen = () => {
@@ -33,6 +33,9 @@ const LoginScreen = () => {
                 ]
             }
         >
+            <Box align="flex-end">
+                <LocaleSelector/>
+            </Box>
             <Box>
                 <AppText
                     text={t("title.login")}

@@ -1,9 +1,10 @@
 import { createStackNavigator } from "@react-navigation/stack"
 
 import { AuthNavigator } from "@features/auth/navigation"
+import { useAppSelector } from "@src/shared/hooks"
+
 import MainNavigator from "./MainNavigator"
 import { APP_NAVIGATOR, RootStackParamList } from "./ScreenTypes"
-import { useAppSelector } from "@src/shared/hooks"
 
 const RootNavigator = () => {
     const RookStack = createStackNavigator<RootStackParamList>()

@@ -1,14 +1,17 @@
-import { StyleSheet, TouchableOpacity } from "react-native"
+import { Image, StyleSheet, TouchableOpacity } from "react-native"
+import { t } from "i18next" 
 
-import { RadioCheckedIcon, RadioUnchekedIcon } from "@src/assets"
+import { FLAGS, RadioCheckedIcon, RadioUnchekedIcon } from "@src/assets"
 import { AppLanguage } from "@src/models"
-import { AppText } from "@src/shared/components"
+import { AppText, Box } from "@src/shared/components"
 import { useAppTheme } from "@src/shared/hooks"
 import { sizes } from "@src/shared/utils"
 
 export interface LanguageItemState {
-    name: string,
-    lng: AppLanguage
+    code: AppLanguage,
+    labelKey: string,
+    locale: string,
+    flag: string
 }
 
 interface LanguageItemProps {
@@ -30,7 +33,17 @@ const LanguageItem = ({ item, checked, onPress }: LanguageItemProps) => {
             }]}
             onPress={onPress}
         >
-            <AppText text={item.name} />
+            <Box horizontal align="center" gap={sizes._12sdp} >
+                <Image
+                    source={FLAGS[item.code]}
+                    style={{
+                        width: sizes._22sdp,
+                        height: sizes._22sdp
+                    }}
+                />
+                <AppText text={t(item.labelKey)} />
+
+            </Box>
             {checked ? (
                 <RadioCheckedIcon color={Colors.primary} />
             ) : (

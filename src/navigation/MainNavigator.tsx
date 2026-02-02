@@ -1,7 +1,7 @@
 import { createStackNavigator } from "@react-navigation/stack"
+import { SettingLanguageScreen } from "@src/features/account/screens"
 import MainTabNavigator from "./MainTabNavigator"
 import { APP_NAVIGATOR, APP_SCREEN, AuthenticationParamsList } from "./ScreenTypes"
-import { SettingLanguageScreen } from "@src/features/account/screens"
 
 const MainNavigator = () => {
     const Stack = createStackNavigator<AuthenticationParamsList>()
