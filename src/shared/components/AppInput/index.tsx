@@ -1,11 +1,11 @@
-import { StyleSheet, Text, TextInput, TextInputProps, TouchableOpacity, View, ViewStyle } from "react-native"
-import AppText from "../AppText"
+import { useState } from "react"
+import { StyleSheet, TextInput, TextInputProps, TouchableOpacity, View, ViewStyle } from "react-native"
 import { sizes } from "@src/shared/utils"
 import { APP_FONTS } from "@src/shared/themes"
 import { useAppTheme } from "@src/shared/hooks"
-import { useState } from "react"
-import Box from "../Box"
 import { PasswordHideInputIcon, PasswordShowInputIcon } from "@src/assets"
+import Box from "../Box"
+import AppText from "../AppText"
 
 interface AppInputProps extends TextInputProps{
     containerStyle?: ViewStyle

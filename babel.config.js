@@ -17,6 +17,7 @@ module.exports = {
         ],
         alias: {
           "@src": "./src",
+          "@assets": "./src/assets",
           "@theme": "./src/shared/theme",
           "@hooks": "./src/shared/hooks",
           "@features": "./src/features"

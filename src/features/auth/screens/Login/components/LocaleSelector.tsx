@@ -1,13 +1,18 @@
 import React, { useImperativeHandle, useMemo, useRef, useState } from "react"
+import { Image, Platform, StatusBar, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 import { useTranslation } from "react-i18next"
-import { Image, Modal, Platform, StyleSheet, Text, TouchableOpacity, View } from "react-native"
+import Modal from "react-native-modal"
 
-import { AppText } from "@src/shared/components"
-import { useAppSelector } from "@src/shared/hooks"
+import { AppText, Box } from "@src/shared/components"
+import { useAppDispatch, useAppSelector, useAppTheme } from "@src/shared/hooks"
 import { LANGUAGES } from "@src/translations/languages"
-import { FLAGS } from "@src/assets"
+import { ArrowDownIcon, FLAGS } from "@src/assets"
 import { _screen_width, sizes } from "@src/shared/utils"
-import { Spacing } from "@src/shared/themes"
+import { APP_FONTS, Spacing } from "@src/shared/themes"
+import { AppLanguage } from "@src/models"
+import { LanguageItem } from "@src/features/account/screens/SettingLanguage/components"
+import { onChangeLanguage } from "@src/redux"
+import { t } from "i18next"
 
 const LocaleSelector = () => {
     const appLanguage = useAppSelector(x => x.languageReducer.appLanguage)
@@ -30,39 +35,72 @@ const LocaleSelector = () => {
                     }}
                 />
                 <AppText text={t(language?.labelKey ?? '')} />
+                <ArrowDownIcon
+                    width={sizes._14sdp}
+                    height={sizes._14sdp}
+                />
             </TouchableOpacity>
-            <LanguagesModal ref={modalRef} />
+            <LanguagesModal 
+                ref={modalRef} 
+                appLanguage={appLanguage}
+            />
         </>
     )
 }
 
-const LanguagesModal = React.forwardRef((props, ref) => {
-    const [visible, setVisible] = useState<boolean>(false);
+const LanguagesModal = React.forwardRef(({appLanguage}: {appLanguage: AppLanguage}, ref) => {
+    const [isVisible, setIsVisible] = useState<boolean>(false);
+
+    const { Colors } = useAppTheme()
+
     useImperativeHandle(ref, () => ({
-        show: show,
-        hide: hide
+        show: onShow,
+        hide: onHide
     }))
 
-    const show = () => {
-        setVisible(true)
+    const onShow = () => {
+        setIsVisible(true)
     }
-    const hide = () => {
-        setVisible(false)
+    const onHide = () => {
+        setIsVisible(false)
+    }
+
+    const onChangeAppLanguage  = (code: AppLanguage)  => {
+        useAppDispatch(onChangeLanguage(code))
+        onHide()
     }
     return (
         <Modal
-            visible={visible}
-            transparent
+            isVisible={isVisible}
+            statusBarTranslucent={true}
             style={{ padding: 0, margin: 0 }}
+            onBackdropPress={onHide}
+            onModalShow={() => StatusBar.setHidden(true, 'fade')}
+            onModalHide={() => StatusBar.setHidden(false, 'fade')}
         >
-            <View style={styles.main}>
-                <View style={{
-                    backgroundColor: "#FFF",
-                    minHeight: 400,
-                    width: _screen_width - Spacing.spacingPage * 2,
-                    borderRadius: sizes._12sdp  
-                }}>
-                    <Text>lll</Text>
+            <View style={[styles.containerModal, {
+                paddingBottom: Spacing.spacingPage
+            }]}>
+                <View style={[styles.modal]}>
+                    <Box align="center" style={[styles.headerModal,{
+                        borderBottomColor: Colors.grayBackground
+                    }]}>
+                        <AppText 
+                            text={t('title.select_language')}
+                            fontFamily="content_medium"
+                        />
+                    </Box>
+                    <Box style={styles.contentModal}>
+                        {LANGUAGES.map(item => (
+                            <LanguageItem 
+                                key={item.code}
+                                item={item}
+                                checked={item.code === appLanguage}
+                                onPress={() => onChangeAppLanguage(item.code)}
+                            />
+                        ))}
+
+                    </Box>
                 </View>
             </View>
         </Modal>
@@ -73,23 +111,24 @@ const styles = StyleSheet.create({
     btnSelector: {
         flexDirection: "row",
         alignItems: "center",
-        gap: sizes._12sdp
+        gap: sizes._8sdp
     },
-    main: {
-        flex: 1,
-        backgroundColor: 'rgba(0,0,0,0.6)',
-        justifyContent: 'flex-end',
-        padding: 20,
-        alignItems: 'center',
-        ...Platform.select({
-            android: {
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-            },
-        }),
+    containerModal: {
+        marginTop: "auto",
+        alignItems: "center"
+    },
+    modal: {
+        minHeight: 400,
+        width: _screen_width - Spacing.spacingPage * 2,
+        backgroundColor: "#FFF",
+        borderRadius: sizes._18sdp,
+    },
+    headerModal: {
+        padding: sizes._14sdp,
+        borderBottomWidth: 0.5
+    },
+    contentModal: {
+        paddingHorizontal: Spacing.spacingPage
     },
 })
 
