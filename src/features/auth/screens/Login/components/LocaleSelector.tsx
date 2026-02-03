@@ -59,7 +59,7 @@ const LanguagesModal = React.forwardRef((props, ref) => {
                 <View style={{
                     backgroundColor: "#FFF",
                     minHeight: 400,
-                    width: _screen_width - Spacing.spacingSpace * 2,
+                    width: _screen_width - Spacing.spacingPage * 2,
                     borderRadius: sizes._12sdp  
                 }}>
                     <Text>lll</Text>

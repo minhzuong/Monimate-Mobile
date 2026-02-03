@@ -16,7 +16,7 @@ const SettingLanguageScreen = () => {
         <PageContainer>
             <AppHeader title={t('header.language')}/>
             <Box style={{
-                padding: Spacing.spacingSpace,
+                padding: Spacing.spacingPage,
             }}>
                 {LANGUAGES.map((item, index) => (
                     <LanguageItem

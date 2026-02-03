@@ -35,7 +35,7 @@ const AccountOverviewScreen = () => {
                 showBack={false}
             />
             <Box style={{
-                padding: Spacing.spacingSpace,
+                padding: Spacing.spacingPage,
             }}>
                 <Box gap={sizes._15sdp}>
                     <Section title={t('title.user_settings')}>
