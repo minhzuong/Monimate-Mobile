@@ -1,18 +1,18 @@
 import React, { useImperativeHandle, useMemo, useRef, useState } from "react"
-import { Image, Platform, StatusBar, StyleSheet, Text, TouchableOpacity, View } from "react-native"
+import { Image, StatusBar, StyleSheet, TouchableOpacity, View } from "react-native"
 import { useTranslation } from "react-i18next"
 import Modal from "react-native-modal"
+import { t } from "i18next"
 
 import { AppText, Box } from "@src/shared/components"
 import { useAppDispatch, useAppSelector, useAppTheme } from "@src/shared/hooks"
 import { LANGUAGES } from "@src/translations/languages"
 import { ArrowDownIcon, FLAGS } from "@src/assets"
 import { _screen_width, sizes } from "@src/shared/utils"
-import { APP_FONTS, Spacing } from "@src/shared/themes"
+import { Spacing } from "@src/shared/themes"
 import { AppLanguage } from "@src/models"
 import { LanguageItem } from "@src/features/account/screens/SettingLanguage/components"
 import { onChangeLanguage } from "@src/redux"
-import { t } from "i18next"
 
 const LocaleSelector = () => {
     const appLanguage = useAppSelector(x => x.languageReducer.appLanguage)

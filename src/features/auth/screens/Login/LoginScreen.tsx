@@ -3,12 +3,12 @@ import { useTranslation } from "react-i18next"
 
 import { AppButton, AppInput, AppText, Box, PageContainer } from "@src/shared/components"
 import { sizes } from "@src/shared/utils"
-import { StyleSheet, TouchableOpacity, View } from "react-native"
+import { StyleSheet, TouchableOpacity } from "react-native"
 import { useAppDispatch, useAppTheme } from "@src/shared/hooks"
 import { navigate } from "@src/navigation/NavigationServices"
 import { APP_SCREEN } from "@src/navigation/ScreenTypes"
 import { onSetToken } from "@src/redux"
-import { LocaleSelector } from "./components"
+import { LocaleSelector } from "@src/features/account/screens/SettingLanguage/components"
 
 
 const LoginScreen = () => {
