@@ -6,7 +6,7 @@ import { AppButton, AppInput, AppText, BackButton, Box, PageContainer } from "@s
 import { sizes } from "@src/shared/utils"
 import { useAppTheme } from "@src/shared/hooks"
 import { goBack, navigate } from "@src/navigation/NavigationServices"
-import { LeftArrowIcon } from "@src/assets"
+import { ArrowLeftIcon } from "@src/assets"
 import { APP_SCREEN } from "@src/navigation/ScreenTypes"
 
 

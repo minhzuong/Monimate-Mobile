@@ -41,6 +41,10 @@
     "language.vietnamese": "Vietnamese",
     "header.account": "Account",
     "header.language": "Language",
-    "question.account": "Don't have an account?"
+    "question.account": "Don't have an account?",
+    "validation.email_is_required": "Email is required",
+    "validation.email_not_valid": "Email is not valid",
+    "validation.password_is_required": "Password is required",
+    "validation.password_not_valid": "Password is not valid"
   }
 }

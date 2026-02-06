@@ -1,7 +1,7 @@
 import { sizes } from "@src/shared/utils";
 import Svg, { Circle, G, Path } from "react-native-svg";
 
-const LeftArrowIcon = (props: any) => (
+const ArrowLeftIcon = (props: any) => (
   <Svg
     width={sizes._24sdp}
     height={sizes._24sdp}
@@ -190,7 +190,7 @@ const RadioCheckedIcon = (props: any) => {
 }
 
 export {
-  LeftArrowIcon,
+  ArrowLeftIcon,
   PasswordShowInputIcon,
   PasswordHideInputIcon,
   TabBarHome,

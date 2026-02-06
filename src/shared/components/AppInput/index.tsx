@@ -1,5 +1,7 @@
+import { useTranslation } from "react-i18next"
 import { useState } from "react"
 import { StyleSheet, TextInput, TextInputProps, TouchableOpacity, View, ViewStyle } from "react-native"
+
 import { sizes } from "@src/shared/utils"
 import { APP_FONTS } from "@src/shared/themes"
 import { useAppTheme } from "@src/shared/hooks"
@@ -23,6 +25,7 @@ const AppInput = ({
     const [isFocus, setIsFocus] = useState<boolean>(false)
     const [showPassword, setShowPassword] = useState<boolean>(true)
     const { Colors } = useAppTheme()
+    const { t } = useTranslation()
     return (
         <View style={[styles.container, containerStyle]}>
             <Box gap={5}>
@@ -79,7 +82,7 @@ const AppInput = ({
             {!!errMessage && (
                 
                     <AppText
-                        text={errMessage}
+                        text={t(errMessage)}
                         color={Colors.error}
                         fontSize="12"
                     />

@@ -41,6 +41,10 @@
     "language.vietnamese": "Tiếng Việt",
     "header.account": "Tài khoản",
     "header.language": "Ngôn ngữ",
-    "question.account": "Bạn chưa có tài khoản?"
+    "question.account": "Bạn chưa có tài khoản?",
+    "validation.email_is_required": "Vui lòng nhập email",
+    "validation.email_not_valid": "Email không hợp lệ",
+    "validation.password_is_required": "Vui lòng nhập mật khẩu",
+    "validation.password_not_valid": "Mật khẩu không hợp lệ"
   }
 }

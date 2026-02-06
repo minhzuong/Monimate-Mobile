@@ -1,6 +1,6 @@
 import { TouchableOpacity } from "react-native"
 
-import { LeftArrowIcon } from "@src/assets"
+import { ArrowLeftIcon } from "@src/assets"
 import { goBack } from "@src/navigation/NavigationServices"
 import { ACTIVE_OPACITY_TOUCH, sizes } from "@src/shared/utils"
 
@@ -16,7 +16,7 @@ const BackButton = () => {
         onPress={goBack}
         activeOpacity={ACTIVE_OPACITY_TOUCH}
        >
-            <LeftArrowIcon/>
+            <ArrowLeftIcon/>
        </TouchableOpacity>
     )
 }

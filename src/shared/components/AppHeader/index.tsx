@@ -1,11 +1,11 @@
+import { ReactNode } from "react"
 import { StyleSheet, TouchableOpacity } from "react-native"
-import AppText from "../AppText"
-import Box from "../Box"
 import { sizes } from "@src/shared/utils"
 import { useAppTheme } from "@src/shared/hooks"
-import { LeftArrowIcon } from "@src/assets"
+import { ArrowLeftIcon } from "@src/assets"
 import { goBack } from "@src/navigation/NavigationServices"
-import { ReactNode } from "react"
+import AppText from "../AppText"
+import Box from "../Box"
 
 interface AppHeaderProps {
     title: string,
@@ -41,7 +41,7 @@ const AppHeader = ({ title, showBack = true, rightContent }: AppHeaderProps) => 
                             }}
                             onPress={() => goBack()}
                         >
-                            <LeftArrowIcon color={Colors.defaultIconColor} />
+                            <ArrowLeftIcon color={Colors.defaultIconColor} />
                         </TouchableOpacity>
 
                     )
