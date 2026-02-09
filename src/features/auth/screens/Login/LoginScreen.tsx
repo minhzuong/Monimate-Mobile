@@ -1,10 +1,10 @@
+import { StyleSheet, TouchableOpacity } from "react-native"
 import { useSafeAreaInsets } from "react-native-safe-area-context"
 import { useTranslation } from "react-i18next"
 import { Formik } from "formik";
 
 import { AppButton, AppInput, AppText, Box, PageContainer } from "@src/shared/components"
 import { sizes } from "@src/shared/utils"
-import { StyleSheet, TouchableOpacity } from "react-native"
 import { useAppDispatch, useAppTheme } from "@src/shared/hooks"
 import { navigate } from "@src/navigation/NavigationServices"
 import { APP_SCREEN } from "@src/navigation/ScreenTypes"
@@ -101,7 +101,6 @@ const LoginScreen = () => {
                                     />
                                 </TouchableOpacity>
                             </Box>
-
                         </Box>
                         <AppButton
                             containerStyle={{

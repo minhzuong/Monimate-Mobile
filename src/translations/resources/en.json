@@ -25,9 +25,11 @@
     "label.email": "Email",
     "label.password": "Password",
     "label.confirm_password": "Confirm password",
+    "label.otp": "OTP code",
     "placeholder.email": "Enter your email",
     "placeholder.password": "Enter password",
     "placeholder.confirm_password": "Enter confirm password",
+    "placeholder.otp": "Enter OTP code",
     "tabbar.home": "Home",
     "tabbar.account": "Account",
     "item.language": "App Language",
@@ -45,6 +47,10 @@
     "validation.email_is_required": "Email is required",
     "validation.email_not_valid": "Email is not valid",
     "validation.password_is_required": "Password is required",
-    "validation.password_not_valid": "Password is not valid"
+    "validation.password_not_valid": "Password is not valid",
+    "validation.confirm_password_is_required": "Confirm password is required",
+    "validation.passwords_do_not_match": "Passwords do not match",
+    "validation.otp_is_required": "OTP is required",
+    "validation.otp_not_valid": "OTP is not valid"
   }
 }

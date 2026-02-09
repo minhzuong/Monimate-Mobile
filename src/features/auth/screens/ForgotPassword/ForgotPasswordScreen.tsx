@@ -8,15 +8,14 @@ import { useAppTheme } from "@src/shared/hooks"
 import { goBack, navigate } from "@src/navigation/NavigationServices"
 import { ArrowLeftIcon } from "@src/assets"
 import { APP_SCREEN } from "@src/navigation/ScreenTypes"
+import { Formik } from "formik"
+import { EmailValidationSchema } from "@src/validations"
 
 
 const ForgotPasswordScreen = () => {
     // useAppdispatch(onChangeAppTheme({appTheme: 'dark'}))
     const { t } = useTranslation()
     const { top: paddingTop } = useSafeAreaInsets()
-    const onSubmit = () => {
-        navigate(APP_SCREEN.VERIFY_OTP)
-    }
     return (
         <PageContainer
             padding
@@ -46,23 +45,46 @@ const ForgotPasswordScreen = () => {
 
             </Box>
 
-
-            <Box
-                gap={10}
-            >
-                <AppInput
-                    label={t('label.email')}
-                    placeholder={t('placeholder.email')}
-                    keyboardType="email-address"
-                />
-            </Box>
-            <AppButton
-                containerStyle={{
-                    marginTop: sizes._10sdp
+            <Formik
+                initialValues={{email: ''}}
+                validationSchema={EmailValidationSchema}
+                onSubmit={(values) => {
+                    navigate(APP_SCREEN.VERIFY_OTP)
                 }}
-                title={t('button.confirm')}
-                onPress={onSubmit}
-            />
+            >
+                {({
+                    handleBlur,
+                    handleSubmit,
+                    values,
+                    errors,
+                    touched,
+                    setFieldValue
+                }) => (
+                    <>
+                        <Box
+                            gap={10}
+                        >
+                            <AppInput
+                                label={t('label.email')}
+                                placeholder={t('placeholder.email')}
+                                keyboardType="email-address"
+                                value={values.email}
+                                onChangeText={text => setFieldValue('email', text)}
+                                onBlur={handleBlur('email')}
+                                errMessage={touched.email ? errors.email : ''}                
+                            />
+                        </Box>
+                        <AppButton
+                            containerStyle={{
+                                marginTop: sizes._10sdp
+                            }}
+                            title={t('button.confirm')}
+                            onPress={handleSubmit}
+                        />
+                    
+                    </>
+                )}
+            </Formik>
         </PageContainer>
     )
 }

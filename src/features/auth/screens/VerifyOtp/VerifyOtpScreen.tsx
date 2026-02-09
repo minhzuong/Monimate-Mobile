@@ -1,10 +1,12 @@
 import { StyleSheet } from "react-native"
 import { useSafeAreaInsets } from "react-native-safe-area-context"
 import { useTranslation } from "react-i18next"
+import { Formik } from "formik"
 
 import { AppButton, AppInput, AppText, BackButton, Box, PageContainer } from "@src/shared/components"
 import { sizes } from "@src/shared/utils"
 import { useAppTheme } from "@src/shared/hooks"
+import { OTPValidationSchema } from "@src/validations"
 
 const VerifyOtpScreen = () => {
     // useAppdispatch(onChangeAppTheme({appTheme: 'dark'}))
@@ -37,21 +39,46 @@ const VerifyOtpScreen = () => {
                     margin={{ mt: sizes._5sdp }}
                 />
             </Box>
-            <Box
-                gap={10}
-            >
-                <AppInput
-                    label={t('label.email')}
-                    placeholder={t('placeholder.email')}
-                    keyboardType="email-address"
-                />
-            </Box>
-            <AppButton
-                containerStyle={{
-                    marginTop: sizes._10sdp
+            <Formik
+                initialValues={{ otp: '' }}
+                validationSchema={OTPValidationSchema}
+                onSubmit={(values) => {
+                    // navigate(APP_SCREEN.VERIFY_OTP)
                 }}
-                title={t('button.confirm')}
-            />
+            >
+                {({
+                    handleBlur,
+                    handleSubmit,
+                    values,
+                    errors,
+                    touched,
+                    setFieldValue
+                }) => (
+                    <>
+
+                        <Box
+                            gap={10}
+                        >
+                            <AppInput
+                                label={t('label.otp')}
+                                placeholder={t('placeholder.otp')}
+                                value={values.otp}
+                                onChangeText={text => setFieldValue('otp', text)}
+                                onBlur={handleBlur('otp')}
+                                errMessage={touched.otp ? errors.otp : ''}
+                            />
+                        </Box>
+                        <AppButton
+                            containerStyle={{
+                                marginTop: sizes._10sdp
+                            }}
+                            title={t('button.confirm')}
+                            onPress={handleSubmit}
+                        />
+                    </>
+
+                )}
+            </Formik>
         </PageContainer>
     )
 }

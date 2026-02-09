@@ -25,9 +25,11 @@
     "label.email": "Email",
     "label.password": "Mật khẩu",
     "label.confirm_password": "Xác nhận mật khẩu",
+    "label.otp": "Mã OTP",
     "placeholder.email": "Nhập email",
     "placeholder.password": "Nhập mật khẩu",
     "placeholder.confirm_password": "Nhập mật khẩu",
+    "placeholder.otp": "Nhập mật OTP",
     "tabbar.home": "Trang chủ",
     "tabbar.account": "Tài khoản",
     "item.language": "Ngôn ngữ ứng dụng",
@@ -45,6 +47,10 @@
     "validation.email_is_required": "Vui lòng nhập email",
     "validation.email_not_valid": "Email không hợp lệ",
     "validation.password_is_required": "Vui lòng nhập mật khẩu",
-    "validation.password_not_valid": "Mật khẩu không hợp lệ"
+    "validation.password_not_valid": "Mật khẩu không hợp lệ",
+    "validation.confirm_password_is_required": "Vui lòng nhập xác nhận mật khẩu",
+    "validation.passwords_do_not_match": "Mật khẩu không trùng khớp",
+    "validation.otp_is_required": "Vui lòng nhập mã OTP",
+    "validation.otp_not_valid": "Mã OTP không hợp lệ"
   }
 }
